@@ -36,4 +36,6 @@ function createGrid(gridSize){
     }
 }
 
+createGrid(16);
+
 
