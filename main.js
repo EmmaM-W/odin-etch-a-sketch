@@ -2,6 +2,9 @@ const gridContainer = document.querySelector('#gridContainer');
 const div = document.createElement('div');
 div.style.backgroundColor= 'red';
 div.textContent = 'grid';
+div.addEventListener('onmouseover', function (e) {
+    e.target.style.backgroundColor = 'blue';
+});
 
 function createGrid(gridSize){
     let gridHeight =  480/gridSize;
@@ -13,9 +16,13 @@ function createGrid(gridSize){
         grid.style.flexShrink = '0';
         grid.style.height =  gridHeight +'px';
         grid.style.width = gridHeight + 'px';
+        grid.addEventListener('mouseover', function (e) {
+            console.log('hit');
+            e.target.style.backgroundColor = 'blue';
+        });
 
         gridContainer.appendChild(grid);
     }
 }
 
-createGrid(16);
+createGrid(8);
